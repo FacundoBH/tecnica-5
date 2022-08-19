@@ -1,0 +1,73 @@
+CREATE DATABASE examen
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_general_ci;
+
+
+CREATE TABLE clientes (
+  id_clientes        int NOT NULL,
+  nombre_cliente     varchar(30) NOT NULL,
+  apellido_cliente   varchar(30) NOT NULL,
+  fecha_nac_cliente  date NOT NULL,
+  peso_cliemte       float NOT NULL,
+  altura_cliente     float NOT NULL,
+  domicilio_cliente  varchar(30) NOT NULL,
+  cod_postal         int NOT NULL,
+  movil_cliente01    float NOT NULL,
+  movil_cliente02    float DEFAULT NULL,
+  email_cliente      varchar(30) NOT NULL,
+  /* Llaves */
+  PRIMARY KEY (id_clientes)
+) ENGINE = InnoDB;
+
+a)SELECT 
+  `clientes`.`id_clientes`,
+  `clientes`.`nombre_cliente`,
+  `clientes`.`apellido_cliente`,
+  `clientes`.`fecha_nac_cliente`,
+  `clientes`.`peso_cliemte`,
+  `clientes`.`altura_cliente`,
+  `clientes`.`domicilio_cliente`,
+  `clientes`.`cod_postal`,
+  `clientes`.`movil_cliente01`,
+  `clientes`.`movil_cliente02`,
+  `clientes`.`email_cliente`
+FROM
+  `clientes`
+WHERE
+  `clientes`.`peso_cliemte` > 90 AND 
+  `clientes`.`altura_cliente` > 1,78
+
+B)SELECT 
+  `clientes`.`id_clientes`,
+  `clientes`.`nombre_cliente`,
+  `clientes`.`apellido_cliente`,
+  `clientes`.`fecha_nac_cliente`,
+  `clientes`.`peso_cliemte`,
+  `clientes`.`altura_cliente`,
+  `clientes`.`domicilio_cliente`,
+  `clientes`.`cod_postal`,
+  `clientes`.`movil_cliente01`,
+  `clientes`.`movil_cliente02`,
+  `clientes`.`email_cliente`
+FROM
+  `clientes`
+WHERE
+  `clientes`.`cod_postal` != 7600 AND 
+  `clientes`.`email_cliente` LIKE '%hotmail%'
+c)SELECT AVG (`clientes`.`altura_cliente`) AS promedio_altura FROM clientes;
+
+d)SELECT MAX(`clientes`.`peso_cliente`) AS peso_mayor FROM clientes;
+
+e)SELECT MIN(`clientes`.`edad_cliente`) AS edad_menor FROM clientes;
+
+3)a)UPDATE `clientes`
+    SET   `clientes`.`fechanac_cliente` ='1972/04/04'
+    WHERE  `clientes`.`apellido_cliente` ='Mercado';
+
+b)UPDATE `clientes`
+  SET   `clientes`.`movil02_cliente` ='223445545'
+  WHERE  `clientes`.`apellido_cliente` ='Forchino';
+
+c)UPDATE `clientes`
+  SET   `clientes`.`altura_cliente` ='1.80'
+  WHERE  `clientes`.`apellido_cliente` ='Fernandez';
