@@ -1,0 +1,31 @@
+a) Crea una tabla llamada marcas con 3 campos que son:
+  idMarca smallint clave primaria no nula,
+  NombreMarca char(10) no nulo,
+  NombreCiudad char(60) no nulo,
+
+b) Crea una tabla llamada coches con 3 campos que son:
+  codcoche SMAILLINT NO NULO PRIMARIO JEY,
+  nombre CHAR(15) NO NULO,
+  modelo CHAR(10),
+
+C) Crea una tabla llamada marco con 2 campos que son:
+  IdMarca SMAILLINT NOT NULL (CLAVE PRINCIPAL, CLAVE EXTRANJERA),
+  codcoche SMALLINT NO NULO,
+
+d) Ingresa los siguientes datos en la tabla MARCAS:
+  INSERTAR EN MARCAS VALORES (1,'vw','Mar del Plata')
+  INSERTAR EN MARCAS VALORES (2,'renault','Rosario')
+  INSERTAR EN MARCAS VALORES (3,'fiat','Córdoba')
+  INSERTAR EN MARCAS VALORES (4,'ford','Neuquen')
+
+e) Selecciona todos los campos dentro de la tabla MARCAS
+
+f) Selecciona el campo (nombre y ciudad) dentro de la tabla MARCAS
+
+g) Selecciona el campo (nombre y ciudad) dentro de la tabla MARCAS y muestra los campos que tendrán IdMarca = 2
+
+h) Selecciona el campo (NombreMarca y ciudad) dentro de la tabla marca y muestra los campos que tienen ciudad = "Neuquen"
+
+i) Selecciona el campo (nombre y ciudad), luego selecciona la tabla marcas y por último muestra los campos que contengan una "s" en ciudad
+
+j) Actualiza el campo de ciudad = "neuquen" en la tabla marcas, lo actualiza a ciudad = "jujuy"
